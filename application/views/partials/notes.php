@@ -8,14 +8,18 @@
                 <div class="col-lg-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title d-inline"><?= $note["title"] ?></h5>
-                            <a href="#" id="<?= $note["id"] ?>" class="delete btn btn-sm btn-danger float-right">Delete</a>
                             <form class="note_form mt-3" action="update_note_description/<?= $note["id"] ?>" method="POST">
                                 <div class="form-group">
-                                    <textarea class="form-control no-resize" name="description" rows="3"><?= $note["description"] ?></textarea>
+                                    <label for="title_<?= $note["id"] ?>">Title</label>
+                                    <input type="text" class="form-control" id="title_<?= $note["id"] ?>" name="title" value="<?= $note["title"] ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description_">Description</label>
+                                    <textarea class="form-control no-resize" id="description_<?= $note["id"] ?>" name="description" rows="3"><?= $note["description"] ?></textarea>
                                 </div>
                             </form>
-                            <p class="card-text font-italic text-right small"><?= DATE("F j, Y", STRTOTIME($note["created_at"])) ?></p>
+                            <p class="card-text d-inline font-italic text-left small"><?= DATE("F j, Y", STRTOTIME($note["created_at"])) ?></p>
+                            <a href="#" id="<?= $note["id"] ?>" class="delete btn btn-sm btn-danger float-right">Delete</a>
                         </div>
                     </div>
                 </div>

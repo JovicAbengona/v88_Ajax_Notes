@@ -21,8 +21,8 @@
         }
 
         public function update($update_note){
-            $query = "UPDATE notes SET description = ?, updated_at = ? WHERE id = ? ";
-            $values = array($update_note["description"], date("Y-m-d, H:i:s"), $update_note["id"]);
+            $query = "UPDATE notes SET title = ?, description = ?, updated_at = ? WHERE id = ? ";
+            $values = array($update_note["title"], $update_note["description"], date("Y-m-d, H:i:s"), $update_note["id"]);
 
             return $this->db->query($query, $values);
         }
