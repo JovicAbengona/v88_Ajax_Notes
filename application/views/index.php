@@ -11,6 +11,10 @@
             .no-resize{
                 resize: none;
             }
+            
+            #notes .form-control {
+                border: 0;
+            }
         </style>
         <title>Ajax | Notes</title>
     </head>
